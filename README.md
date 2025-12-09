@@ -58,9 +58,9 @@ hugo server
 - Los archivos en `static/` se copian directamente al sitio final
 - El `baseURL` en `hugo.toml` se ajusta automáticamente durante el despliegue
 
-## 📝 Gestión de Contenido con Sveltia CMS
+## 📝 Gestión de Contenido con Decap CMS
 
-Este proyecto incluye **Sveltia CMS** para gestionar el contenido de forma visual.
+Este proyecto incluye **Decap CMS** (anteriormente Netlify CMS) para gestionar el contenido de forma visual.
 
 ### Acceder al CMS
 
@@ -71,7 +71,7 @@ https://vicoyes.github.io/landing_conectores_hugo/admin/
 
 ### Configuración
 
-El CMS está configurado para usar GitHub OAuth directamente. Para más detalles sobre la configuración, consulta el archivo **[SVELTIA_CMS_SETUP.md](SVELTIA_CMS_SETUP.md)**.
+El CMS está configurado para usar GitHub OAuth a través de un proxy público. Para más detalles sobre la configuración, consulta el archivo **[SVELTIA_CMS_SETUP.md](SVELTIA_CMS_SETUP.md)** (aunque el nombre del archivo menciona Sveltia, la configuración es para Decap CMS).
 
 ### Opción 1: Configuración Rápida (Recomendada)
 

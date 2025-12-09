@@ -3,8 +3,8 @@ backend:
   repo: vicoyes/landing_conectores_hugo  # Formato: usuario/repositorio
   branch: master  # Cambia a "main" si tu rama principal es main
   # Opción 1: Proxy OAuth público (recomendado - más fácil)
-  # No requiere configuración adicional, funciona automáticamente
-  # Sveltia CMS usa GitHub OAuth directamente sin necesidad de proxy
+  # No requiere configuración adicional de OAuth Apps
+  base_url: https://decapcms-oauth.netlify.app  # Proxy OAuth para GitHub (gratuito)
 
 media_folder: "static/img"
 public_folder: "/img"

@@ -1,6 +1,6 @@
-# Configuración de Sveltia CMS con GitHub
+# Configuración de Decap CMS con GitHub
 
-Esta guía te ayudará a configurar Sveltia CMS para que funcione con GitHub Pages usando autenticación OAuth.
+Esta guía te ayudará a configurar Decap CMS (anteriormente Netlify CMS) para que funcione con GitHub Pages usando autenticación OAuth.
 
 ## 📋 Requisitos Previos
 
@@ -10,9 +10,9 @@ Esta guía te ayudará a configurar Sveltia CMS para que funcione con GitHub Pag
 
 ## 🔧 Configuración Paso a Paso
 
-### Opción 1: Usar GitHub OAuth Directo (Recomendado - Más Fácil)
+### Opción 1: Usar Proxy OAuth (Recomendado - Más Fácil)
 
-Esta es la opción más simple. Sveltia CMS se conecta directamente con GitHub usando OAuth.
+Esta es la opción más simple y no requiere configuración adicional de OAuth Apps.
 
 1. **Verificar configuración actual**:
    - El archivo `static/admin/config.yml` ya está configurado con:
@@ -21,8 +21,9 @@ Esta es la opción más simple. Sveltia CMS se conecta directamente con GitHub u
        name: github
        repo: vicoyes/landing_conectores_hugo
        branch: master
+       base_url: https://decapcms-oauth.netlify.app
      ```
-   - Sveltia CMS maneja la autenticación OAuth automáticamente.
+   - Este es un proxy OAuth público y gratuito que facilita la autenticación.
 
 2. **Acceder al CMS**:
    - Ve a: `https://vicoyes.github.io/landing_conectores_hugo/admin/`
@@ -30,7 +31,7 @@ Esta es la opción más simple. Sveltia CMS se conecta directamente con GitHub u
    - Autoriza la aplicación
    - ¡Listo! Ya puedes editar contenido
 
-**¡Eso es todo!** No necesitas configurar nada más. Sveltia CMS se conecta directamente con GitHub.
+**¡Eso es todo!** No necesitas configurar nada más. El proxy OAuth maneja la autenticación automáticamente.
 
 ### Opción 2: Configurar tu Propia OAuth App (Opcional)
 
@@ -41,7 +42,7 @@ Si prefieres usar tu propia OAuth App de GitHub (más control):
 1. Ve a tu perfil de GitHub → **Settings** → **Developer settings** → **OAuth Apps**
 2. Haz clic en **"New OAuth App"**
 3. Completa el formulario:
-   - **Application name**: `Sveltia CMS - Landing Conectores`
+   - **Application name**: `Decap CMS - Landing Conectores`
    - **Homepage URL**: `https://vicoyes.github.io/landing_conectores_hugo`
    - **Authorization callback URL**: `https://vicoyes.github.io/landing_conectores_hugo/admin/`
 4. Haz clic en **"Register application"**
@@ -73,7 +74,7 @@ El usuario que se autentique necesita tener **permisos de escritura** en el repo
 
 1. Despliega tu sitio en GitHub Pages
 2. Visita `https://vicoyes.github.io/landing_conectores_hugo/admin/`
-3. Deberías ver la pantalla de login de Sveltia CMS
+3. Deberías ver la pantalla de login de Decap CMS
 4. Haz clic en "Login with GitHub"
 5. Autoriza la aplicación
 6. Deberías ver el editor de contenido
@@ -85,14 +86,14 @@ El usuario que se autentique necesita tener **permisos de escritura** en el repo
 - **Archivos editables**: Solo los archivos definidos en `collections` de `config.yml` serán editables
 - **Cambios**: Los cambios se guardan directamente en el repositorio como commits
 
-## 🆚 Diferencias con Decap CMS
+## 📝 Sobre Decap CMS
 
-Sveltia CMS es una evolución de Decap CMS (anteriormente Netlify CMS) con mejoras:
+Decap CMS (anteriormente Netlify CMS) es un CMS headless de código abierto:
 
-- ✅ Interfaz más moderna y rápida
-- ✅ Mejor soporte para GitHub OAuth
-- ✅ Mejor rendimiento
-- ✅ Compatible con el mismo formato de configuración
+- ✅ Interfaz intuitiva y fácil de usar
+- ✅ Soporte completo para GitHub OAuth
+- ✅ Buen rendimiento
+- ✅ Formato de configuración simple y flexible
 
 ## 🐛 Solución de Problemas
 
@@ -111,6 +112,6 @@ Sveltia CMS es una evolución de Decap CMS (anteriormente Netlify CMS) con mejor
 
 ## 📚 Recursos Adicionales
 
-- [Documentación oficial de Sveltia CMS](https://sveltia-cms.com/)
+- [Documentación oficial de Decap CMS](https://decapcms.org/)
 - [Guía de GitHub OAuth Apps](https://docs.github.com/en/apps/oauth-apps/building-oauth-apps/creating-an-oauth-app)
 
