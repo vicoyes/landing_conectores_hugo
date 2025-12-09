@@ -1,47 +1,252 @@
 backend:
-  name: git-gateway
+  name: github
+  repo: vicoyes/landing_conectores_hugo
   branch: main
 
-media_folder: "src/img"
-public_folder: "src/img"
+media_folder: "static/img"
+public_folder: "/img"
 
-# Local backend for testing (uncomment to use with 'npx decap-server')
+# Local backend for testing
 local_backend: true
 
 collections:
   - name: "pages"
     label: "Páginas"
     files:
-      - file: "src/data/home.json"
-        label: "Página de Inicio"
-        name: "home"
+      - file: "content/_index.md"
+        label: "Landing Page"
+        name: "landing"
         fields:
-          - {label: "Sección Hero", name: "hero", widget: "object", collapsed: false, fields: [
-              {label: "Badge Superior", name: "badge", widget: "string"},
-              {label: "Título (Parte 1)", name: "title_part1", widget: "string"},
-              {label: "Título (Resaltado)", name: "title_highlight", widget: "string"},
-              {label: "Título (Parte 2)", name: "title_part2", widget: "string"},
-              {label: "Subtítulo (Negrita)", name: "subtitle_bold", widget: "string"},
-              {label: "Descripción Principal", name: "description", widget: "text"},
-              {label: "Texto Botón CTA", name: "cta_text", widget: "string"},
-              {label: "Microtexto (bajo botón)", name: "microtext", widget: "string"}
-            ]}
-          - {label: "Sección Nuestro Sueño", name: "dream", widget: "object", collapsed: true, fields: [
-              {label: "Pretítulo", name: "pretitle", widget: "string"},
-              {label: "Título Principal", name: "title", widget: "string"},
-              {label: "Subtítulo (Light)", name: "subtitle_light", widget: "string"},
-              {label: "Subtítulo (Bold)", name: "subtitle_bold", widget: "string"},
-              {label: "Sección Únete - Pretítulo", name: "join_pretitle", widget: "string"},
-              {label: "Sección Únete - Título", name: "join_title", widget: "string"},
-              {label: "Sección Únete - Subtítulo", name: "join_subtitle", widget: "string"}
-            ]}
-          - {label: "Sección Cómo Funciona", name: "steps", widget: "object", collapsed: true, fields: [
-              {label: "Pretítulo", name: "pretitle", widget: "string"},
-              {label: "Título", name: "title", widget: "string"},
-              {label: "Lista de Pasos", name: "list", widget: "list", fields: [
-                  {label: "Número", name: "number", widget: "string"},
-                  {label: "Título del Paso", name: "title", widget: "string"},
-                  {label: "Descripción", name: "description", widget: "text"},
-                  {label: "Icono Material", name: "icon", widget: "string"}
-                ]}
-            ]}
+          - {label: "Título SEO", name: "title", widget: "string"}
+          - {label: "Descripción SEO", name: "description", widget: "text"}
+          - {label: "Keywords", name: "keywords", widget: "string"}
+          - {label: "Autor", name: "author", widget: "string"}
+
+          - label: "Sección Hero"
+            name: "hero"
+            widget: "object"
+            collapsed: true
+            fields:
+              - {label: "Pre-título", name: "pre_title", widget: "string"}
+              - {label: "Título (HTML permitido)", name: "title", widget: "string"}
+              - {label: "Subtítulo (Negrita)", name: "subtitle_bold", widget: "string"}
+              - {label: "Subtítulo (Texto)", name: "subtitle_text", widget: "text"}
+              - {label: "Texto Botón CTA", name: "cta_text", widget: "string"}
+              - {label: "Enlace CTA", name: "cta_link", widget: "string"}
+              - {label: "Microtexto", name: "micro_text", widget: "string"}
+              - {label: "Badges", name: "badges", widget: "list"}
+
+          - label: "Sección Sueño (Dream)"
+            name: "dream_section"
+            widget: "object"
+            collapsed: true
+            fields:
+              - {label: "Pre-título", name: "pre_title", widget: "string"}
+              - {label: "Título", name: "title", widget: "string"}
+              - {label: "Subtítulo 1", name: "subtitle_1", widget: "string"}
+              - {label: "Subtítulo 2", name: "subtitle_2", widget: "string"}
+              - {label: "Únete - Pre-título", name: "join_pre_title", widget: "string"}
+              - {label: "Únete - Título", name: "join_title", widget: "string"}
+              - {label: "Únete - Subtítulo", name: "join_subtitle", widget: "string"}
+              - {label: "Ecosistema - Pre-título", name: "ecosystem_pre_title", widget: "string"}
+              - {label: "Ecosistema - Título", name: "ecosystem_title", widget: "string"}
+              - label: "Tarjeta 1"
+                name: "card_1"
+                widget: "object"
+                fields:
+                  - {label: "Título", name: "title", widget: "string"}
+                  - {label: "Texto", name: "text", widget: "text"}
+              - label: "Tarjeta 2"
+                name: "card_2"
+                widget: "object"
+                fields:
+                  - {label: "Título", name: "title", widget: "string"}
+                  - {label: "Texto", name: "text", widget: "text"}
+              - {label: "Propósito - Pre-título", name: "purpose_pre_title", widget: "string"}
+              - {label: "Propósito - Título", name: "purpose_title", widget: "string"}
+              - {label: "Propósito - Subtítulo", name: "purpose_subtitle", widget: "string"}
+              - label: "Tarjetas de Propósito"
+                name: "purpose_cards"
+                widget: "list"
+                fields:
+                  - {label: "Título", name: "title", widget: "string"}
+                  - {label: "Texto", name: "text", widget: "text"}
+                  - {label: "Icono Material", name: "icon", widget: "string"}
+                  - {label: "Clase Color (Tailwind)", name: "color_class", widget: "string"}
+              - {label: "Texto CTA Final (HTML)", name: "cta_text", widget: "string"}
+              - {label: "Botón CTA Final", name: "cta_button", widget: "string"}
+
+          - label: "Sección Pasos"
+            name: "steps_section"
+            widget: "object"
+            collapsed: true
+            fields:
+              - {label: "Título (HTML)", name: "title", widget: "string"}
+              - label: "Pasos"
+                name: "steps"
+                widget: "list"
+                fields:
+                  - {label: "Número", name: "number", widget: "string"}
+                  - {label: "Etiqueta Paso", name: "step_label", widget: "string"}
+                  - {label: "Título", name: "title", widget: "string"}
+                  - {label: "Texto", name: "text", widget: "text"}
+                  - {label: "Icono", name: "icon", widget: "string"}
+                  - {label: "Destacado?", name: "highlight", widget: "boolean", required: false}
+              - {label: "Texto Footer (HTML)", name: "footer_text", widget: "string"}
+              - {label: "CTA Footer", name: "footer_cta", widget: "string"}
+
+          - label: "Sección Casos (Ejemplos)"
+            name: "casos_section"
+            widget: "object"
+            collapsed: true
+            fields:
+              - {label: "Badge", name: "badge", widget: "string"}
+              - {label: "Título", name: "title", widget: "string"}
+              - {label: "Subtítulo", name: "subtitle", widget: "string"}
+              - label: "Requisitos"
+                name: "requirements"
+                widget: "list"
+                fields:
+                  - {label: "Número", name: "number", widget: "string"}
+                  - {label: "Texto (HTML)", name: "text", widget: "string"}
+              - {label: "Título Comparación", name: "comparison_title", widget: "string"}
+              - {label: "Subtítulo Comparación", name: "comparison_subtitle", widget: "string"}
+              - label: "Casos Válidos"
+                name: "valid_cases"
+                widget: "object"
+                fields:
+                  - {label: "Título", name: "title", widget: "string"}
+                  - {label: "Items (HTML)", name: "items", widget: "list"}
+                  - label: "Precios"
+                    name: "prices"
+                    widget: "list"
+                    fields:
+                      - {label: "Etiqueta", name: "label", widget: "string"}
+                      - {label: "Precio", name: "price", widget: "string"}
+              - label: "Casos Inválidos"
+                name: "invalid_cases"
+                widget: "object"
+                fields:
+                  - {label: "Título", name: "title", widget: "string"}
+                  - {label: "Items (HTML)", name: "items", widget: "list"}
+                  - {label: "Nota Info (HTML)", name: "info_note", widget: "string"}
+              - {label: "Texto CTA", name: "cta_text", widget: "string"}
+              - {label: "Subtexto CTA", name: "cta_subtext", widget: "string"}
+
+          - label: "Sección Beneficios"
+            name: "benefits_section"
+            widget: "object"
+            collapsed: true
+            fields:
+              - {label: "Imagen Principal", name: "image", widget: "image"}
+              - label: "Tarjeta Flotante"
+                name: "floating_card"
+                widget: "object"
+                fields:
+                  - {label: "Cantidad", name: "amount", widget: "string"}
+                  - {label: "Texto", name: "text", widget: "string"}
+              - {label: "Badge", name: "badge", widget: "string"}
+              - {label: "Título", name: "title", widget: "string"}
+              - label: "Beneficios"
+                name: "benefits"
+                widget: "list"
+                fields:
+                  - {label: "Título", name: "title", widget: "string"}
+                  - {label: "Texto", name: "text", widget: "text"}
+                  - {label: "Icono", name: "icon", widget: "string"}
+              - {label: "Mini CTA", name: "mini_cta_text", widget: "string"}
+              - {label: "Botón CTA", name: "cta_button", widget: "string"}
+
+          - label: "Sección Autoridad"
+            name: "authority_section"
+            widget: "object"
+            collapsed: true
+            fields:
+              - {label: "Badge", name: "badge", widget: "string"}
+              - {label: "Título", name: "title", widget: "string"}
+              - label: "Puntos"
+                name: "points"
+                widget: "list"
+                fields:
+                  - {label: "Icono", name: "icon", widget: "string"}
+                  - {label: "Texto (HTML)", name: "text", widget: "string"}
+              - {label: "Mensaje Confianza", name: "trust_message", widget: "string"}
+              - {label: "Botón CTA", name: "cta_button", widget: "string"}
+
+          - label: "Sección Testimonios"
+            name: "testimonials_section"
+            widget: "object"
+            collapsed: true
+            fields:
+              - {label: "Badge", name: "badge", widget: "string"}
+              - {label: "Título", name: "title", widget: "string"}
+              - {label: "Subtítulo", name: "subtitle", widget: "string"}
+              - label: "Testimonios"
+                name: "testimonials"
+                widget: "list"
+                fields:
+                  - {label: "Cita (HTML)", name: "quote", widget: "text"}
+                  - {label: "Nombre", name: "name", widget: "string"}
+                  - {label: "Iniciales", name: "initials", widget: "string"}
+                  - {label: "Estado", name: "status", widget: "string"}
+              - {label: "Rating Google", name: "google_rating", widget: "string"}
+
+          - label: "Sección Contacto"
+            name: "contact_section"
+            widget: "object"
+            collapsed: true
+            fields:
+              - {label: "Badge", name: "badge", widget: "string"}
+              - {label: "Título", name: "title", widget: "string"}
+              - {label: "Descripción (HTML)", name: "description", widget: "text"}
+
+          - label: "Sección FAQ"
+            name: "faq_section"
+            widget: "object"
+            collapsed: true
+            fields:
+              - {label: "Badge", name: "badge", widget: "string"}
+              - {label: "Título", name: "title", widget: "string"}
+              - {label: "Subtítulo", name: "subtitle", widget: "string"}
+              - label: "Preguntas"
+                name: "faqs"
+                widget: "list"
+                fields:
+                  - {label: "Pregunta", name: "question", widget: "string"}
+                  - {label: "Respuesta (HTML)", name: "answer", widget: "text"}
+              - {label: "Texto CTA", name: "cta_text", widget: "string"}
+              - {label: "Botón CTA", name: "cta_button", widget: "string"}
+
+          - label: "Sección Footer"
+            name: "footer_section"
+            widget: "object"
+            collapsed: true
+            fields:
+              - {label: "Descripción", name: "description", widget: "text"}
+              - label: "Redes Sociales"
+                name: "social_links"
+                widget: "object"
+                fields:
+                  - {label: "TikTok", name: "tiktok", widget: "string"}
+                  - {label: "Instagram", name: "instagram", widget: "string"}
+                  - {label: "LinkedIn", name: "linkedin", widget: "string"}
+              - label: "Contacto"
+                name: "contact"
+                widget: "object"
+                fields:
+                  - {label: "Teléfono (Visible)", name: "phone", widget: "string"}
+                  - {label: "Teléfono (Link)", name: "phone_link", widget: "string"}
+                  - {label: "Dirección", name: "address", widget: "string"}
+                  - {label: "Web (Visible)", name: "website", widget: "string"}
+                  - {label: "Web (Link)", name: "website_link", widget: "string"}
+                  - {label: "Email (Visible)", name: "email", widget: "string"}
+                  - {label: "Email (Link)", name: "email_link", widget: "string"}
+                  - {label: "WhatsApp Link", name: "whatsapp_link", widget: "string"}
+              - {label: "Copyright", name: "copyright", widget: "string"}
+              - label: "Enlaces Legales"
+                name: "legal_links"
+                widget: "object"
+                fields:
+                  - {label: "Aviso Legal", name: "aviso_legal", widget: "string"}
+                  - {label: "Privacidad", name: "privacidad", widget: "string"}
+                  - {label: "Cookies", name: "cookies", widget: "string"}

@@ -18,6 +18,8 @@ hero:
     - "Impacto real"
     - "Acción Solidaria"
 
+
+
 dream_section:
   pre_title: "En Empieza de Cero"
   title: "TENEMOS UN SUEÑO"
@@ -93,7 +95,8 @@ steps_section:
       icon: "payments"
       highlight: true
   
-  footer_text: 'Únete a la red de Conectores que <strong class="text-primary">cambian vidas</strong>'
+  footer_text: |
+    Únete a la red de Conectores que <strong class="text-primary">cambian vidas</strong>
   footer_cta: "QUIERO SER CONECTOR"
 
 # Section: Examples
@@ -146,6 +149,8 @@ casos_section:
 
   cta_text: "QUIERO SER CONECTOR"
   cta_subtext: "Sin compromiso · Respuesta en 24h"
+
+
 
 benefits_section:
   image: "img/Personas_celebrando.png"
