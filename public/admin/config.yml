@@ -1,13 +1,16 @@
 backend:
   name: github
-  repo: vicoyes/landing_conectores_hugo
-  branch: main
+  repo: vicoyes/landing_conectores_hugo  # Formato: usuario/repositorio
+  branch: master  # Cambia a "main" si tu rama principal es main
+  # Opción 1: Proxy OAuth público (recomendado - más fácil)
+  # No requiere configuración adicional, funciona automáticamente
+  # Sveltia CMS usa GitHub OAuth directamente sin necesidad de proxy
 
 media_folder: "static/img"
 public_folder: "/img"
 
-# Local backend for testing
-local_backend: true
+# Local backend para desarrollo local (descomenta para usar)
+# local_backend: true
 
 collections:
   - name: "pages"
