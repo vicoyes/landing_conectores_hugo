@@ -1,6 +1,6 @@
 ---
 title: Programa de Conectores - Empieza de Cero | Gana 300€ por Referido
-description: Prueba de modificacion Únete al Programa de Conectores de Empieza de Cero y gana 300€ por cada persona que ayudes a cancelar sus deudas legalmente con la Ley de Segunda Oportunidad. Sin inversión, sin experiencia previa.
+description: Únete al Programa de Conectores de Empieza de Cero y gana 300€ por cada persona que ayudes a cancelar sus deudas legalmente con la Ley de Segunda Oportunidad. Sin inversión, sin experiencia previa.
 keywords: programa conectores, ley segunda oportunidad, ganar dinero ayudando, cancelar deudas, referidos 300 euros, empieza de cero, asesoría jurídica
 author: Empieza de Cero & Asociados
 hero:
