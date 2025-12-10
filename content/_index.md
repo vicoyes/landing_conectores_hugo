@@ -17,7 +17,7 @@ hero:
     - Impacto real
     - Acción Solidaria
 dream_section:
-  pre_title: En Empieza de Cero
+  pre_title: En Empieza de Cero Prueba de modificacion
   title: TENEMOS UN SUEÑO
   subtitle_1: Construir un verdadero ecosistema
   subtitle_2: de segundas oportunidades
