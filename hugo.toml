@@ -1,0 +1,3 @@
+baseURL = '/'  # Se ajustará automáticamente en GitHub Pages
+languageCode = 'es-es'
+title = 'Programa de Conectores - Empieza de Cero'
